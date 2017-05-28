@@ -1,0 +1,85 @@
+﻿@model OnlineShop.Database.EF.sanpham
+@{
+    ViewBag.Title = "ChiTietSanPham";
+    Layout = "~/Areas/NguoiDung/Views/Shared/_LayOut.cshtml";
+}
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                @{ Html.RenderAction("left_sidebar", "DanhMuc");}                
+            </div>
+
+            <div class="col-sm-9 padding-right">
+                <div class="product-details">
+                    <!--product-details-->
+                    <div class="col-sm-5">
+                        <div class="view-product">
+                            <img src="~/Areas/Admin/Content/Photo/@Model.anh"  width="329" height="380" />
+                        </div>
+                        <div id="similar-product" class="carousel slide" data-ride="carousel">
+
+                            <!-- Wrapper for slides -->
+                       
+
+                            <!-- Controls -->
+                          
+                        </div>
+
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="product-information">
+                            <!--/product-information-->
+                            <img src="images/product-details/new.jpg" class="newarrival" alt="" />
+                            <h2>@Model.ten</h2>
+                            <p>Mã SP: @Model.ma</p>
+                            <img src="images/product-details/rating.png" alt="" />
+                        <br/>
+                            <span>
+                                <span>$@Model.gia</span>
+                                <br/>
+                                <label>Quantity:</label>
+                                <input type="text" value="" />
+                                <button type="button" class="btn btn-fefault cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    Add to cart
+                                </button>
+                            </span>
+                            <p><b>Availability:</b> In Stock</p>
+                            <p><b>Condition:</b> New</p>
+                            <p><b>Brand:</b> E-SHOPPER</p>
+                            @*<a href=""><img src="images/product-details/share.png" class="share img-responsive" alt="" /></a>*@
+                        </div><!--/product-information-->
+                    </div>
+                </div><!--/product-details-->
+
+                <div class="category-tab shop-details-tab">
+                    <!--category-tab-->
+                    <div class="col-sm-12">
+                        <ul class="nav nav-tabs">
+                           
+                            <li class="active"><a href="#reviews" data-toggle="tab">Mô tả</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+
+                        <div class="tab-pane fade active in" id="reviews">
+                            <div class="col-sm-12">                          
+                                <p>@Model.mota</p> 
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!--/category-tab-->
+
+
+                @{ Html.RenderAction("SPDeNghi", "SanPham");}
+
+            </div>
+        </div>
+    </div>
+</section>
+
+

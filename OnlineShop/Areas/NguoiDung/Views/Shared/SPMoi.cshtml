@@ -1,0 +1,32 @@
+﻿@using OnlineShop.Database.EF;
+@{ 
+    var DSSPMoi = (List<OnlineShop.Database.EF.sanpham>)ViewBag.spm;
+}
+
+<div class="features_items">
+    <!--features_items-->
+    <h2 class="title text-center">Sản Phẩm Mới</h2>
+  
+    @foreach (var item in DSSPMoi)
+    {
+        <div class="col-sm-4">
+            <div class="product-image-wrapper">
+                <div class="single-products">
+                    <div class="productinfo text-center">
+                        <a href="@Url.Action("ChiTietSanPham","SanPham", new { ma = item.ma },null)">
+                            <img src="~/Areas/Admin/Content/Photo/@item.anh" alt="" width="255" height="237" />
+                        </a>
+                        <h2>$@item.gia</h2>
+                        <p>@item.ten</p>
+                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                         
+                    </div>
+               
+                </div>
+           
+            </div>
+        </div>
+    }
+
+
+</div><!--features_items-->

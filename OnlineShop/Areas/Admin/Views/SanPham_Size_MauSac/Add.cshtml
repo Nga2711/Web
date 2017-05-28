@@ -1,0 +1,100 @@
+﻿@model IEnumerable<object>
+@{
+    List<OnlineShop.Database.EF.sanpham> lstsp = Model.ToList()[0] as List<OnlineShop.Database.EF.sanpham>;
+
+}
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add</h2>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Thêm mới số lượng sản phẩm </h2>
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form action="Add" method="post" class="form-horizontal form-label-left" enctype="multipart/form-data" novalidate>
+
+                <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">
+                        Tên sản phẩm <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select class="form-control col-md-7 col-xs-12" p name="sanphamma">
+                            @foreach (var item in lstsp)
+                            {
+
+                                <option value="@item.ma">@item.ten</option>
+                            }
+                        </select>
+                    </div>
+                </div>          
+               
+                <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                        Số lượng <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="number" id="number" name="soluong" required="required" placeholder="Số lượng" class="form-control col-md-7 col-xs-12">
+                    </div>
+                </div>              
+ 
+                <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">
+                        Size <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select class="form-control col-md-7 col-xs-12" p name="sizema">
+
+                                <option value="S">S</option>                             
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="X">X</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XLL</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">
+                        Màu sắc <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select class="form-control col-md-7 col-xs-12" p name="mauma">
+
+                            <option value="Xanh">Xanh</option>
+                            <option value="Đỏ">Đỏ</option>
+                            <option value="Tím">Tím</option>
+                            <option value="Vàng">Vàng</option>
+                            <option value="Hồng">Hồng</option>
+                            <option value="Trắng">Trắng</option>
+                            <option value="Nâu">Nâu</option>
+                            <option value="Đen">Đen</option>
+                            <option value="Cam">Cam</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                        <button type="submit" class="btn btn-primary">Thêm</button>
+                        @Html.ActionLink("Trở lại danh sách", "Index", "SanPham_Size_MauSac")
+
+                    </div>
+                </div>
+            </form>
+
+
+
+
+        </div>
+    </div>
+</div>
