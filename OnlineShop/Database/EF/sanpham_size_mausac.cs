@@ -15,12 +15,12 @@ namespace OnlineShop.Database.EF
 
         [Key]
         [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [StringLength(50)]
         public string sizema { get; set; }
 
         [Key]
         [Column(Order = 2)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [StringLength(50)]
         public string mauma { get; set; }
 
         public int soluong { get; set; }

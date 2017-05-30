@@ -243,6 +243,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ShopOnline.mdf" />
+    <Content Include="App_Data\ShopOnline_log.ldf">
+      <DependentUpon>ShopOnline.mdf</DependentUpon>
+    </Content>
     <Content Include="Areas\NguoiDung\Theme\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Areas\NguoiDung\Theme\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Areas\NguoiDung\Theme\bootstrap\css\bootstrap.css" />
@@ -353,7 +357,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Content\Photo\" />
     <Folder Include="Areas\Admin\Theme\build\" />
     <Folder Include="Areas\Admin\Theme\css\" />
