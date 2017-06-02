@@ -8,7 +8,7 @@ namespace OnlineShop.Database.EF
     public partial class DBShop : DbContext
     {
         public DBShop()
-            : base("name=DBShop1")
+            : base("name=DBShop5")
         {
         }
 
@@ -76,6 +76,14 @@ namespace OnlineShop.Database.EF
                 .HasMany(e => e.sanpham_size_mausac)
                 .WithRequired(e => e.sanpham)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<sanpham_size_mausac>()
+                .Property(e => e.sizema)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<sanpham_size_mausac>()
+                .Property(e => e.mauma)
+                .IsUnicode(false);
         }
     }
 }

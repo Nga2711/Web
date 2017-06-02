@@ -214,6 +214,9 @@
     <Compile Include="Areas\NguoiDung\Controllers\DanhMucController.cs" />
     <Compile Include="Areas\NguoiDung\Controllers\HomeController.cs" />
     <Compile Include="Areas\NguoiDung\Controllers\SanPhamController.cs" />
+    <Compile Include="Areas\NguoiDung\Controllers\ShoppingCartController.cs" />
+    <Compile Include="Areas\NguoiDung\Models\Bean\ItemCart.cs" />
+    <Compile Include="Areas\NguoiDung\Models\Bean\ShoppingCart.cs" />
     <Compile Include="Areas\NguoiDung\NguoiDungAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -243,6 +246,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ShopOnline.mdf" />
+    <Content Include="App_Data\ShopOnline_log.ldf">
+      <DependentUpon>ShopOnline.mdf</DependentUpon>
+    </Content>
     <Content Include="Areas\NguoiDung\Theme\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Areas\NguoiDung\Theme\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Areas\NguoiDung\Theme\bootstrap\css\bootstrap.css" />
@@ -317,7 +324,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -353,18 +362,17 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Content\Photo\" />
     <Folder Include="Areas\Admin\Theme\build\" />
     <Folder Include="Areas\Admin\Theme\css\" />
     <Folder Include="Areas\Admin\Theme\images\" />
     <Folder Include="Areas\Admin\Theme\js\" />
     <Folder Include="Areas\Admin\Theme\vendors\" />
-    <Folder Include="Areas\NguoiDung\Models\" />
     <Folder Include="Areas\NguoiDung\Theme\css\" />
     <Folder Include="Areas\NguoiDung\Theme\fonts\" />
     <Folder Include="Areas\NguoiDung\Theme\images\" />
     <Folder Include="Areas\NguoiDung\Views\DanhMuc\" />
+    <Folder Include="Areas\NguoiDung\Views\ShoppingCart\" />
     <Folder Include="Views\SanPham_Size_MauSacDao\" />
   </ItemGroup>
   <ItemGroup>

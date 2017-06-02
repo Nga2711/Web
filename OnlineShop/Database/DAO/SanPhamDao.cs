@@ -10,6 +10,7 @@ namespace OnlineShop.Database.DAO
     public class SanPhamDao
     {
         DBShop db;
+       
         public SanPhamDao()
         {
             db = new DBShop();
