@@ -36,5 +36,12 @@ namespace OnlineShop.Areas.Admin.Controllers
             else
                 return Redirect("Login");
         }
+
+        public ActionResult Logout()
+        {
+            Session.Remove("tentruycap");
+            return Redirect("Login");
+        }
+
     }
 }
