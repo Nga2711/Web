@@ -16,6 +16,10 @@ namespace OnlineShop.Areas.Admin.Controllers
         public ActionResult Index(int PageNum = 1, int PageSize = 5)
         {
             LoaiSanPhamDao dao = new LoaiSanPhamDao();
+            if (Session["tentruycap"] == null)
+            {
+                return Redirect("../AdminHome/Login");
+            }
             return View(dao.ListSPPage(PageNum, PageSize));
         }
 

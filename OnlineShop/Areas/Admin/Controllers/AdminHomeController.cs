@@ -13,7 +13,11 @@ namespace OnlineShop.Areas.Admin.Controllers
         // GET: Admin/AdminHome
         public ActionResult Index()
         {
-            return View();
+            if (Session["tentruycap"]==null)
+            {
+                return Redirect("../AdminHome/Login");
+            }
+                return View();
         }
 
         public ActionResult Login()
@@ -32,5 +36,12 @@ namespace OnlineShop.Areas.Admin.Controllers
             else
                 return Redirect("Login");
         }
+
+        public ActionResult Logout()
+        {
+            Session.Remove("tentruycap");
+            return Redirect("Login");
+        }
+
     }
 }
