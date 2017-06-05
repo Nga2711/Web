@@ -13,7 +13,11 @@ namespace OnlineShop.Areas.Admin.Controllers
         // GET: Admin/AdminHome
         public ActionResult Index()
         {
-            return View();
+            if (Session["tentruycap"]==null)
+            {
+                return Redirect("../AdminHome/Login");
+            }
+                return View();
         }
 
         public ActionResult Login()

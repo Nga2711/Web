@@ -15,11 +15,19 @@ namespace OnlineShop.Areas.Admin.Controllers
         public ActionResult Index(int PageNum = 1, int PageSize = 5)
         {
             DanhMucDao dao = new DanhMucDao();
+            if (Session["tentruycap"] == null)
+            {
+                return Redirect("../AdminHome/Login");
+            }
             return View(dao.ListSPPage(PageNum, PageSize));
         }
         #region Add
         public ActionResult Add()
         {
+            if (Session["tentruycap"] == null)
+            {
+                return Redirect("../AdminHome/Login");
+            }
             return View();
         }
 

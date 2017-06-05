@@ -16,6 +16,10 @@ namespace OnlineShop.Areas.Admin.Controllers
         public ActionResult Index(int PageNum = 1, int PageSize = 5)
         {
            SanPham_Size_MauSacDao  dao = new SanPham_Size_MauSacDao();
+            if (Session["tentruycap"] == null)
+            {
+                return Redirect("../AdminHome/Login");
+            }
             return View(dao.ListSPPage(PageNum, PageSize));
         }
 
