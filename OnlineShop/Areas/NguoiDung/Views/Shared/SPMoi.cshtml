@@ -18,7 +18,9 @@
                         </a>
                         <h2>$@item.gia</h2>
                         <p>@item.ten</p>
-                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                        @*add vao gio hang*@
+                       @*<a href="/Them-gio-hang?id=@item.ma" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>*@ 
+                        <a href="@Url.Action("ChiTietSanPham","SanPham", new { ma = item.ma },null)"   class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                          
                     </div>
                
@@ -27,6 +29,4 @@
             </div>
         </div>
     }
-
-
 </div><!--features_items-->

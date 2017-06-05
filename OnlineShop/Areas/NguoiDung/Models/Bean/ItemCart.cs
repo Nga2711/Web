@@ -9,9 +9,10 @@ namespace OnlineShop.Areas.NguoiDung.Models.Bean
     {
         public int ID { get; set; }
         public string Name { get; set; }
+        public string Picture { get; set; }
         public int Amount { get; set; }
-        public double Price { get; set; }
-        public double GetTotal()
+        public decimal Price { get; set; }
+        public decimal GetTotal()
         {
             return Amount * Price;
         }

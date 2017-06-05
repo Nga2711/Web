@@ -42,9 +42,10 @@
                                 <br/>
                                 <label>Quantity:</label>
                                 <input type="text" value="" />
-                                <button type="button" class="btn btn-fefault cart">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    Add to cart
+                                <button type="button"  class="btn btn-fefault cart" >
+
+                                    <i class="fa fa-shopping-cart" )></i>
+                                   @Html.ActionLink("Add to cart","Add","ShoppingCart",new { id = Model.ma}, null)
                                 </button>
                             </span>
                             <p><b>Availability:</b> In Stock</p>

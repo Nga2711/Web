@@ -18,7 +18,11 @@ namespace OnlineShop.Areas.NguoiDung.Controllers
             return View();
         }
 
-        // them san pham vao gio hang
+        public ActionResult Cart()
+        {
+            return View();
+        }
+     //   them san pham vao gio hang
         public ActionResult Add(int id)
         {
             ShoppingCart Cart = (ShoppingCart)Session["cart"];
@@ -26,11 +30,12 @@ namespace OnlineShop.Areas.NguoiDung.Controllers
                 Cart = new ShoppingCart();
             SanPhamDao dao = new SanPhamDao();
             sanpham sp = dao.getById(id);
-            Cart.AddItem(sp.ma, sp.ten, 1, (double)sp.gia);
+            Cart.AddItem(sp.ma, sp.ten, sp.anh, 1, (decimal)sp.gia);
             Session["cart"] = Cart;
             return Redirect(Request.UrlReferrer.ToString());
+            // return View("Cart");
         }
-
+        
         // xoa toan bo san pham co id = id
         public ActionResult DeleteAll(int id)
         {
@@ -61,7 +66,7 @@ namespace OnlineShop.Areas.NguoiDung.Controllers
 
         public ActionResult Info()
         {
-            double total = 0;
+            decimal total = 0;
             ShoppingCart Cart = (ShoppingCart)Session["cart"]; // gan list san pham trong shoppingcart = session["cart"]
             if(Cart != null)
             {

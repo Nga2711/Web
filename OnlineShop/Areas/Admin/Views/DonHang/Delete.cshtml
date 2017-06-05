@@ -1,0 +1,85 @@
+﻿@model OnlineShop.Database.EF.donhang
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section Header{
+    <div class="page-header">
+        <h1>Xóa đơn đặt hàng</h1>
+    </div>
+}
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>donhang</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ngaylap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngaylap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ngaygiao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngaygiao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.diadiemgiao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.diadiemgiao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phivanchuyen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phivanchuyen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tonggia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tonggia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.khachhangma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.khachhangma)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.trangthai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.trangthai)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

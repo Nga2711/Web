@@ -14,22 +14,21 @@ namespace OnlineShop
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-          //  routes.MapRoute(
-          //    name: "threeoparameter",
-          //    url: "{controller}/{action}/{sanphamma}/{sizema}/{mauma}",
-          //    defaults: new
-          //    {
-          //        sanphamma = UrlParameter.Optional,
-          //        sizema = UrlParameter.Optional,
-          //        mauma = UrlParameter.Optional
-          //    }
-          //);
+            //routes.MapRoute(
+            //    name: "Add Cart",
+            //    url: "Them-gio-hang",
+            //    defaults: new { controller = "ShoppingCart", action = "Add", id = UrlParameter.Optional },
+            //    namespaces: new [] { "OnlineShop.Areas.NguoiDung.Controllers" });
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional},
-                 namespaces: new string[] { "OnlineShop.Areas.Admin.Controllers" }
+                // namespaces: new string[] { "OnlineShop.Areas.Admin.Controllers" }
+                 namespaces: new [] { "OnlineShop.Areas.NguoiDung.Controllers" }
             );
+
+
         }
     }
 }

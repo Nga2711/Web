@@ -207,7 +207,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ChiTietDonHangController.cs" />
     <Compile Include="Areas\Admin\Controllers\DanhMucController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DonHangController.cs" />
+    <Compile Include="Areas\Admin\Controllers\KhachHangController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoaiSanPhamController.cs" />
     <Compile Include="Areas\Admin\Controllers\SanPhamController.cs" />
     <Compile Include="Areas\Admin\Controllers\SanPham_Size_MauSacController.cs" />
@@ -222,7 +225,11 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Database\DAO\AdminDao.cs" />
+    <Compile Include="Database\DAO\ChiTietDonHangDao.cs" />
     <Compile Include="Database\DAO\DanhMucDao.cs" />
+    <Compile Include="Database\DAO\DonHangDao.cs" />
+    <Compile Include="Database\DAO\History.cs" />
+    <Compile Include="Database\DAO\KhachHangDao.cs" />
     <Compile Include="Database\DAO\LoaiSanPhamDao.cs" />
     <Compile Include="Database\DAO\SanPhamDao.cs" />
     <Compile Include="Database\DAO\SanPham_Size_MauSacDao.cs" />
@@ -312,6 +319,18 @@
     <Content Include="Areas\NguoiDung\Theme\bootstrap\font\glyphicons-halflings-regular.woff2" />
     <Content Include="Areas\NguoiDung\Views\SanPham\Index.cshtml" />
     <Content Include="Areas\NguoiDung\Views\Home\Contact1.cshtml" />
+    <Content Include="Areas\NguoiDung\Views\ShoppingCart\Cart.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHang\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHang\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DonHang\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\DonHang\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHang\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DonHang\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DonHang\Update.cshtml" />
+    <Content Include="Areas\Admin\Views\ChiTietDonHang\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ChiTietDonHang\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ChiTietDonHang\Delete.cshtml" />
+    <Content Include="Areas\NguoiDung\Views\SanPham\search.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -372,7 +391,6 @@
     <Folder Include="Areas\NguoiDung\Theme\fonts\" />
     <Folder Include="Areas\NguoiDung\Theme\images\" />
     <Folder Include="Areas\NguoiDung\Views\DanhMuc\" />
-    <Folder Include="Areas\NguoiDung\Views\ShoppingCart\" />
     <Folder Include="Views\SanPham_Size_MauSacDao\" />
   </ItemGroup>
   <ItemGroup>

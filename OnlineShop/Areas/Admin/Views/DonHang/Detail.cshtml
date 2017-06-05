@@ -1,0 +1,77 @@
+﻿@model OnlineShop.Database.EF.donhang
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section Header{
+    <div class="page-header">
+        <h1>Xem đơn đặt hàng</h1>
+    </div>
+}
+<div>
+    <h4>donhang</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ngaylap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngaylap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ngaygiao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngaygiao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.diadiemgiao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.diadiemgiao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phivanchuyen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phivanchuyen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tonggia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tonggia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.khachhangma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.khachhangma)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.trangthai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.trangthai)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

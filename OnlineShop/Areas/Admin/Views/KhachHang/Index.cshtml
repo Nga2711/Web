@@ -1,0 +1,75 @@
+﻿@model IEnumerable<OnlineShop.Database.EF.khachhang>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section Header{
+    <div class="page-header">
+        <h1>Xem danh sách khách hàng</h1>
+    </div>
+}
+
+<div class="row">
+    @using (@Html.BeginForm("Index", "KhachHang", FormMethod.Get))
+   
+    {
+        <div class="col-md-5 ">
+            <div class="input-group">
+                <input type="text" name="searchStr" class="form-control" placeholder="Từ khóa" value="@ViewBag.searchStr" />
+                <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+            </div>
+        </div>
+    }
+</div>
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.diachi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dienthoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.matkhau)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ten)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.diachi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dienthoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.matkhau)
+        </td>
+        <td>
+            <a href="/Admin/KhachHang/Details/@item.ma">
+                <i class="fa fa-info-circle" aria-hidden="true">   </i>
+            </a>
+            <a href="/Admin/KhachHang/Delete/@item.ma">
+                <i class="fa fa-trash-o" aria-hidden="true">   </i>
+            </a>
+        </td>
+    </tr>
+}
+
+</table>

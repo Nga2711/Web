@@ -9,7 +9,7 @@ namespace OnlineShop.Areas.NguoiDung.Models.Bean
     public class ShoppingCart
     {
         public List<ItemCart> ListItem = new List<ItemCart>();
-        public void AddItem (int ID, string Name, int Amount, double Price)
+        public void AddItem (int ID, string Name, string Picture, int Amount, decimal Price)
         {
             bool Check = false;
             foreach (var item in ListItem)
@@ -26,6 +26,7 @@ namespace OnlineShop.Areas.NguoiDung.Models.Bean
                 ItemCart item = new ItemCart();
                 item.ID = ID;
                 item.Name = Name;
+                item.Picture = Picture;
                 item.Amount = Amount;
                 item.Price = Price;
                 ListItem.Add(item);
@@ -73,9 +74,9 @@ namespace OnlineShop.Areas.NguoiDung.Models.Bean
         }
 
         // tong tien trong gio hang
-        public double GetToTalCart()
+        public decimal GetToTalCart()
         {
-            double ToTal = 0;
+            decimal ToTal = 0;
             foreach(var item in ListItem)
             {
                 ToTal += item.GetTotal();

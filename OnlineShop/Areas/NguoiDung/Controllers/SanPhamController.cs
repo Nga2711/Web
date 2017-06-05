@@ -4,12 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using OnlineShop.Database.DAO;
-
+using OnlineShop.Database.EF;
 namespace OnlineShop.Areas.NguoiDung.Controllers
 {
     public class SanPhamController : Controller
     {
         // GET: NguoiDung/SanPham
+        DBShop db = new DBShop();
+
         public ActionResult Index(int loaisanphamma)
         {
             var lsp = new LoaiSanPhamDao().getById(loaisanphamma);
@@ -44,6 +46,12 @@ namespace OnlineShop.Areas.NguoiDung.Controllers
         {
             var sp = new SanPhamDao().getById(ma);
             return View(sp);
+        }
+
+        public ActionResult search(string search)
+        {
+            ViewBag.itemSearch = db.sanphams.SqlQuery("select * from sanpham where ten like '%" + search + "%' or gia <= '" + Convert.ToDecimal(search)+"'");
+            return View();
         }
     }
 }
