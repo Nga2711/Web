@@ -61,13 +61,25 @@ namespace OnlineShop.Areas.NguoiDung.Models.Bean
         }
 
         // giam so luong cua mot san pham
-        public void Delete (int ID, int Amount)
+        public void Delete (int ID)
         {
             foreach(var item in ListItem)
             {
-                if (item.ID == ID)
+                if (item.ID == ID && item.Amount > 1)
                 {
-                    item.Amount -= Amount;
+                    item.Amount = item.Amount - 1;
+                    break;
+                }
+            }
+        }
+
+        public void Add (int id)
+        {
+            foreach(var item in ListItem)
+            {
+                if (item.ID == id)
+                {
+                    item.Amount = item.Amount + 1;
                     break;
                 }
             }

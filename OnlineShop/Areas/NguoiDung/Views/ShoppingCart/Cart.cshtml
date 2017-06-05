@@ -31,8 +31,8 @@
                         <td></td>
                     </tr>
                 </thead>
-@foreach (var item in Model)
-{
+      @foreach (var item in Model)
+   {
                 <tbody>
                    
                     
@@ -50,9 +50,9 @@
                         </td>
                         <td class="cart_quantity">
                             <div class="cart_quantity_button">
-                                <a class="cart_quantity_up" href=""> + </a>
+                                <a href="/ShoppingCart/AddID/@item.ID" class="cart_quantity_up" > + </a>
                                 <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                <a class="cart_quantity_down" href=""> - </a>
+                                <a href="/ShoppingCart/Delete/@item.ID" class="cart_quantity_down" > - </a>
                             </div>
                         </td>
                         <td class="cart_total">

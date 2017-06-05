@@ -20,8 +20,8 @@
                         <p>@item.ten</p>
                         @*add vao gio hang*@
                        @*<a href="/Them-gio-hang?id=@item.ma" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>*@ 
-                        <a href="@Url.Action("ChiTietSanPham","SanPham", new { ma = item.ma },null)"   class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                         
+                        @*<a href="@Url.Action("ChiTietSanPham","SanPham", new { ma = item.ma },null)"   class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>*@
+                        <a href="/ShoppingCart/Add/@item.ma" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                     </div>
                
                 </div>

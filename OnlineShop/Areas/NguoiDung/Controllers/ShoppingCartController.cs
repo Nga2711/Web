@@ -36,6 +36,12 @@ namespace OnlineShop.Areas.NguoiDung.Controllers
             // return View("Cart");
         }
         
+        public ActionResult AddID (int id)
+        {
+            ShoppingCart Cart = (ShoppingCart)Session["cart"];
+            Cart.Add(id);
+            return Redirect(Request.UrlReferrer.ToString());
+        }
         // xoa toan bo san pham co id = id
         public ActionResult DeleteAll(int id)
         {
@@ -47,11 +53,11 @@ namespace OnlineShop.Areas.NguoiDung.Controllers
         }
 
         // giam so luong cua mot san pham co id = id
-        public ActionResult Delete(int id, int amount) // khi goi cho : amount  = 1
+        public ActionResult Delete(int id) 
         {
             ShoppingCart Cart = (ShoppingCart)Session["cart"];
             if (Cart != null)
-                Cart.Delete(id, amount);
+                Cart.Delete(id);
             return Redirect(Request.UrlReferrer.ToString());
         }
 
